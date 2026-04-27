@@ -39,8 +39,11 @@ cat secret.dec.txt
 ```
 **Que se passe-t-il si on modifie un octet du fichier chiffré ?**  
  
+ On néglige l'intégrité des données, le fichier peut devenir corrompu
+
 **Pourquoi ne faut-il pas commiter la clé dans Git ?**   
 
+Pour des raisons de sécurité car le git n'oublie jamais l'historique, on peut retrouver la clé de n'importe où avec git push
 ## 5) Atelier 1 :
 Dans cet atelier, la clé Fernet n'est plus générée dans le code mais stockée dans un Repository Secret Github. Ecrivez un nouveau programme **python app/fernet_atelier1.py** qui utilisera une clé Fernet caché dans un Secret GitHub pour encoder et décoder vos fichiers.
 
